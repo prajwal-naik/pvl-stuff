@@ -1,0 +1,13 @@
+
+.dashboardtable tbody tr td, .dashboardtable tbody tr td h3 {
+    text-align: left;
+}
+
+@media (max-width: 720px) and (min-width: 100px) {
+    
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

@@ -1,0 +1,44 @@
+.container-quiz h2 {
+  text-align: left;
+}
+.container-quiz {
+  margin: 0px 0px;
+}
+.dispalyBtn {
+  width: 200px; 
+  height: 40px; 
+  border-radius: 3px; 
+  background-color: lightblue; 
+  font-weight: 700;
+  display: inline-block;
+}
+.radioBtn {
+  transform: scale(1.6); 
+  margin-right: 10px; 
+  vertical-align: middle; 
+  margin-top: -2px;
+}
+.label {
+  padding: 5px; 
+  font-size: 2.5rem;
+}
+.block1 {
+  padding: 10px;
+}
+.quizBox {
+  transform: scale(0.75); 
+  position: relative; 
+  text-align: left;
+}
+
+video,
+button {
+  display: block;
+}
+
+@media (max-width: 720px) and (min-width: 100px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 720px) {
+}

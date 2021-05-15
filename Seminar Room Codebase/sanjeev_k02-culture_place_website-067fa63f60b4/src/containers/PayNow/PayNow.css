@@ -1,0 +1,17 @@
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+    text-align: right;
+}
+.btn-common-custom {
+    margin: 0px 5px;
+    font-size: 14px;
+    padding: 7px 25px;
+}
+@media (max-width: 720px) and (min-width: 100px) {
+    
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

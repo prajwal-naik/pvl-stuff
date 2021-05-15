@@ -1,0 +1,23 @@
+@media (max-width: 720px) and (min-width: 100px) {
+    .navbar-brand img {
+        width: 60%;
+    }
+    .navbar-brand {
+        margin-right: 4rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+        display: flex;
+    }
+    #copyright .float-right {
+        float: inherit!important;
+    }
+}
+.footerTxt {
+    font-size: 16px;
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

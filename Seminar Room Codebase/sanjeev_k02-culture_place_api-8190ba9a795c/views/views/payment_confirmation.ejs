@@ -1,0 +1,254 @@
+<style type="text/css">
+   body{
+   font-family:arial;
+   }
+</style>
+<body>
+    <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="margin: 30px auto; mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;border:3px solid #f64127;height:auto"> 
+        <% include common/header.ejs %>
+        <tr>
+            <td>
+                <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="table-layout: fixed;">
+
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px; font-size: 22px; text-align: center;color: #f64127;">Booking Confirmation<b style="color:#f64127;"></b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px">Dear <%= user.booking_detail.user_bookings_in_user.first_name %>,</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                           <p style="padding: 10px 0 10px 10px;margin: 0px">Thank you for using Culture.place. Your booking has been confirmed, please find below the details:<b style="color:#f64127;"></b></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px"><strong>Booking Id:</strong> #<%= user.booking_detail.booking_id %></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 50%;">
+                           <table  width="100%" style="background:#fff;padding: 10px 0px">
+                              <tr>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">Booked On</p>
+                                 </td>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.moment(user.booking_detail.created_at).format('DD-MMM-YYYY') %></p>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">Amount Generated</p>
+                                 </td>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">INR <%= user.booking_detail.amount_generated ? user.booking_detail.amount_generated : '0.00'%></p>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">Discounted Amount</p>
+                                 </td>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">INR <%= user.booking_detail.discounted_amount ? user.booking_detail.discounted_amount : '0.00'%></p>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">Total Amount Paid</p>
+                                 </td>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">INR <%= user.booking_detail.total_price ? user.booking_detail.total_price : '0.00'%></p>
+                                 </td>
+                             </tr>
+                           </table>
+                        </td>
+                        <%if(user.transaction_id != ''){ %>
+                           <td style="width: 50%;">
+                              <table  width="100%" style="background:#f5f5f5;padding: 10px 0px">
+                                 <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Transaction ID</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.booking_detail.user_bookings_in_payment.transaction_id ? user.booking_detail.user_bookings_in_payment.transaction_id : 'N/A'%></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Transaction Date</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.booking_detail.user_bookings_in_payment.created_at ? user.moment(user.booking_detail.user_bookings_in_payment.created_at).format('DD-MMM-YYYY') : 'N/A'%> </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Bank Reference Number</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.booking_detail.user_bookings_in_payment.bank_ref_num ? user.booking_detail.user_bookings_in_payment.bank_ref_num : 'N/A'%></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Card Number</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.booking_detail.user_bookings_in_payment.cardnum ? user.booking_detail.user_bookings_in_payment.cardnum : 'N/A'%> </p>
+                                    </td>
+                                </tr>
+                              </table>
+                           </td>
+                        <% } %>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px"><strong style="padding-right: 20px;">Booking Detail: </strong></p>
+                        </td>
+                    </tr>
+
+                    <% if(user.sub_booking_detail.length > 0) { %>
+                        <% user.sub_booking_detail.forEach(function(detail, index){ %>
+                            <tr>
+                                <td colsppan="2">
+                                    <table  width="100%" style="background:#fff;padding: 10px 0px;border-bottom: 1px solid #ddd;">
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 10px 0 0px 10px;margin: 0px; color: #f64127;"><a href="javascript:void(0)"><%= detail.user_sub_booking_in_svp_facilities.svp_facility_in_user.business_name %>(<%= detail.user_sub_booking_in_svp_facilities.svp_facility_in_user.unique_id %>)</a></p>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Selected <% if(detail.open_type == 'no') { %> Court Type & <% } %> Timings</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;">
+                                                    <i>
+                                                        <% if(detail.open_type == 'no') { %>
+                                                            <%= detail.user_sub_booking_in_svp_facilities.facility_category.court_type_name %> <%= detail.user_sub_booking_in_svp_facility_court.court_no %>
+                                                            <%= detail.user_sub_booking_in_svp_facility_court.svp_facility_courts_in_facility_court_type.court_name %>
+                                                        <% } %>
+                                                        <%= detail.booking_interval %>
+                                                    </i>
+                                                </p>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Booking Date <% if(user.booking_detail.booking_status == 'completed') { %> (Completed) <% } %></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i><%= user.moment(detail.booking_date).format('DD-MMM-YYYY') %>
+                                                    <% if(detail.slot_type != 'daily' && detail.slot_type != 'trial') { %> - <%= user.moment(detail.end_date).format('DD-MMM-YYYY'); %> <% } %></i>
+                                                </p>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <table width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width: 25%;">
+                                                                <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Facility Type & Category </p>
+                                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i> <%= detail.user_sub_booking_in_svp_facilities.facility_type.name %> - <%= detail.user_sub_booking_in_svp_facilities.facility_category.name %></i></p>
+                                                            </td>
+                                                            <td style="width: 25%;">
+                                                                <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Amount</p>
+                                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i>INR <%= detail.price %></i></p>
+                                                            </td>
+                                                            <td style="width: 25%;">
+                                                                <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Price Type</p>
+                                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i><%= detail.booking_type %> wise</i></p>
+                                                            </td>
+                                                            <% if((detail.trial_session == '' || detail.trial_session == null) && detail.open_type == 'no') {%>
+                                                                <td style="width: 25%;">
+                                                                    <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Package Name</p>
+                                                                    <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i><%= detail.package_name ? detail.package_name : 'N/A' %></i></p>
+                                                                </td>
+                                                            <% } %>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                        <% if((detail.trial_session == '' || detail.trial_session == null) && detail.open_type == 'no') { %>
+                                            <tr>
+                                                <td>
+                                                    <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Booking Capacity</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i><%= detail.package_no_of_person ? detail.package_no_of_person : 'N/A' %></i></p>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+
+                                        <% var week_day = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']; var count = 0; %>
+                                        <% if(detail.trial_session == '' || detail.trial_session == null) { %>
+                                            <tr>
+                                                <td>
+                                                    <p style="padding: 10px 0 0px 10px;margin: 0px; font-size: 14px;color: #4c4c4c;">Slot Type( 
+                                                        <small>
+                                                            <% week_day.forEach(function(val, key){ %>
+                                                                <% if(detail[val] == 'yes'){ %>
+                                                                    <% if(count != 0) {%>
+                                                                        ,
+                                                                    <% } %>
+                                                                    <% count =1 %>
+                                                                    <%= val %>
+                                                                <% } %>
+                                                            <% }) %>)
+                                                        </small>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;">
+                                                        <i>
+                                                            <% if(detail.slot_type == 'half_yearly') {%>
+                                                                Half Yearly
+                                                            <% }else{%>
+                                                                <%= detail.slot_type %> 
+                                                            <% } %>
+                                                        </i>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                        <tr>
+                                            <td>
+                                                <p style="padding: 0px 0 0px 10px;margin: 0px; font-size: 12px; color: #777777;"><i> <%= detail.user_sub_booking_in_svp_facilities.svp_facility_in_user.business_contact %></i></p>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } %>
+
+                    <% include common/footer.ejs %>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>

@@ -1,0 +1,113 @@
+<style type="text/css">
+   body{
+   font-family:arial;
+   }
+</style>
+<body>
+    <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="margin: 30px auto; mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;border:3px solid #f64127;height:auto"> 
+        <% include common/header.ejs %>
+        <tr>
+            <td>
+                <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="table-layout: fixed;">
+
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px; font-size: 22px; text-align: center;color: #f64127;">Payment Confirmation<b style="color:#f64127;"></b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 10px 0 10px 10px;margin: 0px">Dear <%= user.user_name %>,</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                           <p style="padding: 10px 0 10px 10px;margin: 0px">Thank you for using Culture.place. Your booking has been confirmed, please find below the details:<b style="color:#f64127;"></b></p>
+                        </td>
+                    </tr>
+
+                    <%if(user.user_email != ''){ %>
+                        <tr>
+                            <td colspan="2">
+                                <p style="padding: 10px 0 10px 10px;margin: 0px"><strong>Email Id:</strong> #<%= user.user_email %></p>
+                            </td>
+                        </tr>
+                    <% } %>
+
+                    <%if(user.user_contact_no != ''){ %>
+                        <tr>
+                            <td colspan="2">
+                                <p style="padding: 10px 0 10px 10px;margin: 0px"><strong>Phone Number:</strong> #<%= user.user_contact_no %></p>
+                            </td>
+                        </tr>
+                    <% } %>
+
+                    <tr>
+                        <td style="width: 50%;">
+                           <table  width="100%" style="background:#fff;padding: 10px 0px">
+
+                            <%if(user.created_at != ''){ %>
+                              <tr>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;">Registred On</p>
+                                 </td>
+                                 <td>
+                                     <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.created_at %></p>
+                                 </td>
+                             </tr>
+                             <% } %>
+
+                             <%if(user.amount_generated != ''){ %>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Course Amount</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">INR <%= user.amount_generated ? user.amount_generated : '0.00'%></p>
+                                    </td>
+                                </tr>
+                             <% } %>
+
+                             <%if(user.total_price != ''){ %>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Total Amount Paid</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">INR <%= user.total_price ? user.total_price : '0.00'%></p>
+                                    </td>
+                                </tr>
+                             <% } %>
+                           </table>
+                        </td>
+                        <%if(user.transaction_id != ''){ %>
+                           <td style="width: 50%;">
+                              <table  width="100%" style="background:#f5f5f5;padding: 10px 0px">
+                                 <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Transaction ID</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.transaction_id ? user.transaction_id : 'N/A'%></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;">Transaction Date</p>
+                                    </td>
+                                    <td>
+                                        <p style="padding: 10px 0 10px 10px;margin: 0px;"><%= user.created_at ? user.created_at : 'N/A'%> </p>
+                                    </td>
+                                </tr>
+                              </table>
+                           </td>
+                        <% } %>
+                    </tr><br /><br />
+
+                    <% include common/footer.ejs %>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>

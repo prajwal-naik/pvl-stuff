@@ -1,0 +1,55 @@
+{
+	"dev":{
+
+		"driver" : "mysql",
+		"host" : "localhost",
+		"user" : "sheetal",
+		"database" : "culture_place",
+		"password" : "Sheetal_567#",
+		"dialect" : "mysql"
+	},
+	
+	"staging":{
+		"driver" : "mysql",
+		"host" : "jbapi.cty9zkdaukrn.ap-south-1.rds.amazonaws.com",
+		"user" : "justbooks",
+		"database" : "culture_place_staging",
+		"password" : "jb_tech_2020",
+		"dialect" : "mysql"
+	},
+	
+	"production":{
+		"driver" : "mysql",
+		"host" : "jbapi.cty9zkdaukrn.ap-south-1.rds.amazonaws.com",
+		"user" : "justbooks",
+		"database" : "culture_place",
+		"password" : "jb_tech_2020",
+		"dialect" : "mysql"
+	},
+
+	"secret": "culture@place@jwt@secret",
+
+	"token": "culture_place_qwerty",
+
+	"RAZOR_PAY_KEY_ID": "rzp_test_G3W1XsDqK6oCmA",
+	"RAZOR_PAY_KEY_SECRET": "7uYwu0XmXSyQDpKJBQLJBqq6",
+
+	"mailer": {
+		"host": "smtp.gmail.com",  
+		"port": 465, 
+		"user": "sanjeev.wordpress02@gmail.com",
+		"pass": "Prjava02@",
+		"cc": "sanjeev.wordpress02@gmail.com"
+		
+	},
+	"appBuild": {
+		"ios":{
+			"latestVersion":"1.0.0",
+			"minimumVersionAllowed":"1.0.0"
+		},
+		"android":{
+			"latestVersion":"1.0.0",
+			"minimumVersionAllowed":"1.0.0"
+		}
+	}
+}

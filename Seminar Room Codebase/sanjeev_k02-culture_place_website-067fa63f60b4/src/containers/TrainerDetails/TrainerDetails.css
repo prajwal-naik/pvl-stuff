@@ -1,0 +1,132 @@
+.trainer-details .details-box {
+    text-align: left;
+}
+.trainer-details .details-box .ads-details-info .details-meta span {
+    display: inline-block;
+    margin: 0px 0 2px;
+}
+.trainer-details .description-info .description {
+    text-align: left;
+}
+.trainer-details .trainer-details-btn {
+    cursor: pointer; 
+    background-color: #4CAF50; 
+    color: rgb(255, 255, 255); 
+    font-size: 16px; 
+    border: none; 
+    height: 44px; 
+    width: 100px; 
+    min-width: 220px; 
+    border-radius: 5px;
+    margin: 20px 0px;
+}
+.trainer-details .hero__lead {
+    font-size: 36px;
+}
+.trainer-details .hero {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+.trainer-details .trainer-details-btn {
+    display: initial;
+}
+.trainer-details .hero__sublead {
+    font-size: 24px;
+}
+@media (min-width: 768px){
+    .trainer-details .section--light .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 1.3;
+    }
+}
+.trainer-details .section--light .section-title {
+    font-family: Oswald,sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: 0;
+} 
+.trainer-details .details-image {
+    max-width: 100%;
+    height: auto;
+    /* margin-left: 100px; */
+}
+@media (min-width: 768px) {
+    .trainer-details .list--icon .list__item {
+        font-size: 1.20rem;    
+        text-align: left;
+        margin-bottom: 16px;
+    }
+    .trainer-details .row--narrow-90 {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+.trainer-details .list--icon {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.trainer-details .list {
+    list-style-type: disc;
+}
+.trainer-details ul li, ol li {
+    list-style: disc;
+}
+.trainer-details ul {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+.trainer-details .list .icon {
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+.trainer-details .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    background-size: contain;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.trainer-details .discover {
+    margin-bottom: 40px;
+}
+.trainer-details h2{
+    line-height: 1.5;
+    margin-bottom: 0.8rem !important;
+    font-size: 30px !important;
+    margin-top: 15px !important;
+}
+.trainer-details p{
+   font-size: 20px;
+   line-height: 30px;
+}
+.trainer-details .col{
+    margin: 20px 0px;
+}
+
+@media (max-width: 720px) and (min-width: 100px) {
+    .trainer-details .list--icon {
+        padding-left: 0;
+        margin-bottom: 0;
+        margin: 20px;
+    }
+    .trainer-details p{
+       font-size: 18px;
+       line-height: 28px;
+    }
+    .trainer-details h2 {
+        line-height: 1.2;
+        margin-bottom: 0.8rem !important;
+        font-size: 25px !important;
+        margin-top: 15px !important;
+    }
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

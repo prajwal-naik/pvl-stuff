@@ -1,0 +1,61 @@
+.sidebar-box .navdashboard ul li {
+  text-align: left;
+}
+.form-group label {
+  display: flex;
+}
+.sidebar-box .user .usercontent {
+  text-align: left;
+}
+
+.dashboardtable tbody tr td .highlight {
+  color: #666;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 1em;
+  height: 2px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.success-msg {
+  background: #73bd63;
+  border-radius: 5px;
+  color: #fff;
+}
+.success-msg h2 {
+  color: #fff !important;
+}
+
+.error-msg {
+  background: #eb491e;
+  border-radius: 5px;
+  color: #fff;
+}
+.error-msg h2 {
+  color: #fff !important;
+}
+
+.noRecord {
+  width: 300px;
+  height: auto;
+}
+
+@media (max-width: 720px) and (min-width: 100px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 720px) {
+}

@@ -1,0 +1,47 @@
+<style type="text/css">
+    body{
+    font-family:arial;
+    }
+ </style>
+ <body>
+    <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="margin: 30px auto; mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;border:3px solid #f64127;height:auto"> 
+       <% include common/header.ejs %>
+       <tr>
+          <td>
+             <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                <tr>
+                    <td colspan="2" style="background:#f64127;">
+                       <p style="margin:0px;padding:10px;font-weight:bolder;color:#fff; text-align:center; text-transform: uppercase;">You have been Registered for Course, Please find below details.</p>
+                    </td>
+                 </tr>
+                <tr>
+                   <td>
+                      <p style="padding-left: 10px;padding-top:7px;margin: 0px"><b style="color:#f64127;">Username: </b><%= user.user_name %></p>
+                   </td>
+                </tr>
+                <tr>
+                   <td>
+                      <p style="padding-left: 10px;padding-top:7px;margin: 0px"><b style="color:#f64127;">Email: </b><%= user.user_email %></p>
+                   </td>
+                </tr>
+                <%if (user.user_contact_no != null) { %>
+                <tr>
+                   <td>
+                      <p style="padding-left: 10px;padding-top:7px;margin: 0px"><b style="color:#f64127;">Contact No: </b><%= user.user_contact_no %></p>
+                   </td>
+                </tr>
+                <% } %>
+                <%if (user.user_course_name != null) { %>
+                <tr>
+                   <td>
+                      <p style="padding-left: 10px;padding-top:7px;margin: 0px"><b style="color:#f64127;">Course Name: </b><%= user.user_course_name %></p>
+                   </td>
+                </tr>
+                <% } %><br /><br />
+                <% include common/footer.ejs %>
+             </table>
+          </td>
+       </tr>
+    </table>
+ </body>
+ 

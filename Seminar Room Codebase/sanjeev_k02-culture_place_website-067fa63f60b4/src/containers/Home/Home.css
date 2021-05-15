@@ -1,0 +1,30 @@
+.section-padding {
+    padding: 25px 0;
+}
+
+.success-msg {
+    background: #73bd63;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .success-msg h2 {
+    color: #fff !important;
+  }
+  
+  .error-msg {
+    background: #eb491e;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .error-msg h2 {
+    color: #fff !important;
+  }
+
+@media (max-width: 720px) and (min-width: 100px) {
+    
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

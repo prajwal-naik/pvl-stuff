@@ -1,0 +1,65 @@
+<style type="text/css">
+   body{
+   font-family:arial;
+   }
+</style>
+<body>
+   <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="margin: 30px auto; mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;border:3px solid #f64127;height:auto"> 
+      <% include common/header.ejs %>
+      <tr>
+         <td>
+            <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+               <tr>
+                  <td style="text-align:center" colspan="2">
+                     <img src="<%= user.path %>regheroes.png" width="100%">
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2" style="background:#f64127;">
+                     <p style="margin:0px;padding:10px;font-weight:bolder;color:#fff; text-align:center; text-transform: uppercase;">You have been Registered successfully.</p>
+                  </td>
+               </tr>
+               <tr>
+                  <!--  <td style="text-align:center; padding-top:10px;">
+                     <img src="img/new.png" width="200px;" >
+                     </td> -->
+               </tr>
+               <tr>
+                  <td colspan="2" >
+                     <p style="padding: 10px;">Dear <b style="color:#f64127;"><%= user.user_name %>,</b></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2" >
+                     <p style="padding: 10px;">Welcome to Culture.Place. Before we get started, please confirm your email address by clicking the button below.</p>
+                  </td>
+               </tr>
+               <!-- <tr>
+                  <td>
+                     <span style="padding: 10px; width:30%; display: inline-block; text-align:left;">First Name</span>
+                     <span style="padding: 10px; width:60%; display: inline-block; text-align:left;">{{ @$name }}</span>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <span style="padding: 10px; width:30%; display: inline-block; text-align:left;">Last Name</span>
+                     <span style="padding: 10px; width:60%; display: inline-block; text-align:left;">{{ @$last_name }}</span>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <span style="padding: 10px; width:30%; display: inline-block; text-align:left;">Password</span>
+                     <span style="padding: 10px; width:60%; display: inline-block; text-align:left;">{{ @$password }}</span>
+                  </td> 
+               </tr>-->
+               <tr>
+                  <td colspan="12" style="width:100%; text-align:center; padding-bottom:10px;padding-top:10px; "> 
+                     <a href="<%= user.url %>"  style="display:inline-block; width:30%; color: #fff; background:#f64127; border:unset; cursor:pointer ;padding:8px;text-decoration:unset;" >Confirm Email Address</a>
+                  </td>
+               </tr>
+               <% include common/footer.ejs %>
+            </table>
+         </td>
+      </tr>
+   </table>
+</body>

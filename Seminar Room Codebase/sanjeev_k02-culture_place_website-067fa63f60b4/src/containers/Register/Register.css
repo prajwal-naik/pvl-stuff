@@ -1,0 +1,31 @@
+#content .contact-title {
+    text-align: left !important;
+}
+#content .contact-datails {
+    text-align: left !important;
+}
+#content p {
+    text-align: left !important;
+}
+.with-errors {
+    text-align: left;
+    margin-left: 10px;
+    color: red;
+}
+.form-control {
+    border : 1px solid #bebbbb !important;
+    border-radius: 5px !important;
+}
+.form-control:focus {
+    border-color: #5fb346d4 !important;
+    outline: 0;
+    box-shadow: none;
+}
+@media (max-width: 720px) and (min-width: 100px) {
+    
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:720px) { 
+    
+}

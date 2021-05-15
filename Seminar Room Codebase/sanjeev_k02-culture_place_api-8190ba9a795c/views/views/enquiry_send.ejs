@@ -1,0 +1,32 @@
+<style type="text/css">
+   body{
+   font-family:arial;
+   }
+</style>
+<body>
+   <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="margin: 30px auto; mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;border:3px solid #f64127;height:auto"> 
+      <% include common/header.ejs %>
+      <tr>
+         <td>
+            <table width="900" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+               <tr>
+                  <td>
+                     <p style="padding: 10px;">Dear <b style="color:#f64127;"><%= user.user_name %>,</b></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p style="padding: 10px;">Your query has been sent. We will reply to your query very soon.</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="12" style="width:100%; padding-bottom:10px;padding-top:10px; "> 
+                     <p style="padding-left: 10px;padding-top:7px;margin: 0px">Your Query:- <%= user.enquiry_message %></p>
+                  </td>
+               </tr>
+               <% include common/footer.ejs %>
+            </table>
+         </td>
+      </tr>
+   </table>
+</body>
